@@ -7,6 +7,7 @@ fi
 
 apt update
 apt install build-essential -y
+apt install gcc
 
 VERSION="0.8.12"
 IP=($(ip addr show dev "$(awk '$2 == 00000000 { print $1 }' /proc/net/route)" | awk '$1 == "inet" { sub("/.*", "", $2); print $2 }'))
